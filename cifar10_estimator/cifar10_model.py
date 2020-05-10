@@ -75,6 +75,6 @@ class ResNetCifar10(model_base.ResNet):
             x = res_func(x, 3, self.filters[i + 1], self.filters[i + 1], 1)
 
     x = self._global_avg_pool(x)
-    x = self._fully_connected(x, self.num_classes)
+    x = self._fully_connected_with_activation(x, self.num_classes)
 
     return x

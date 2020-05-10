@@ -223,5 +223,8 @@ class ResNet(object):
     with tf.name_scope('fully_connected_activation') as name_scope:
     FILL IN HERE
     '''
+    with tf.name_scope('fully_connected_activation') as name_scope:
+        x = tf.layers.dense(x, out_dim)
+        x = tf.nn.tanh(x)
     tf.logging.info('image after unit %s: %s', name_scope, x.get_shape())
     return x
